@@ -1,0 +1,8 @@
+{
+  "frontend/src/App.tsx": "Main application component that renders the Game page.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for fetching high scores and submitting new scores to the backend.",
+  "frontend/src/pages/Game.tsx": "Complete IC-Rex Jump & Run game with significantly scaled-up game elements (2.5x larger) including dinosaur character, cacti obstacles, and ICP coins, featuring enhanced audio system with coin collection sound effects, proportionally adjusted collision detection, maintained ground-level alignment, nearest-neighbor pixel-perfect rendering, and cross-platform fullscreen support with German language throughout.",
+  "frontend/src/index.css": "Enhanced global styles with premium OKLCH desert color palette featuring bolder, more vibrant tones, soft shadows, smooth transitions, custom animations (fade-in, pulse-glow, shimmer, float), and disabled text selection across the entire application.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with desert-specific color tokens (desert-light, desert-sand, desert-warm, desert-sky, desert-sun, desert-accent, desert-ground, desert-dark) for consistent theming throughout the application.",
+  "frontend/index.html": "HTML entry point with viewport settings to disable browser zoom and text selection, plus German language attribute and updated title for IC-Rex game."
+}

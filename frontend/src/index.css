@@ -1,0 +1,233 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.75rem;
+        
+        /* Premium desert color palette - bold, vibrant, high-quality tones */
+        --desert-light: 0.96 0.08 85;
+        --desert-sand: 0.88 0.12 75;
+        --desert-warm: 0.82 0.15 65;
+        --desert-sky: 0.90 0.08 220;
+        --desert-sun: 0.75 0.22 55;
+        --desert-accent: 0.65 0.18 45;
+        --desert-ground: 0.55 0.12 50;
+        --desert-dark: 0.35 0.08 40;
+        
+        /* Semantic tokens mapped to premium desert palette */
+        --background: var(--desert-light);
+        --foreground: var(--desert-dark);
+        --card: 0.98 0.05 85;
+        --card-foreground: var(--desert-dark);
+        --popover: 0.98 0.05 85;
+        --popover-foreground: var(--desert-dark);
+        --primary: var(--desert-accent);
+        --primary-foreground: 0.98 0 0;
+        --secondary: var(--desert-sand);
+        --secondary-foreground: var(--desert-dark);
+        --muted: var(--desert-warm);
+        --muted-foreground: 0.50 0.08 45;
+        --accent: var(--desert-sun);
+        --accent-foreground: 0.98 0 0;
+        --destructive: 0.577 0.245 27.325;
+        --destructive-foreground: 0.985 0 0;
+        --border: 0.85 0.08 75;
+        --input: 0.92 0.06 80;
+        --ring: var(--desert-accent);
+        --chart-1: var(--desert-accent);
+        --chart-2: var(--desert-sun);
+        --chart-3: var(--desert-warm);
+        --chart-4: var(--desert-ground);
+        --chart-5: var(--desert-sky);
+        --sidebar: 0.98 0.05 85;
+        --sidebar-foreground: var(--desert-dark);
+        --sidebar-primary: var(--desert-accent);
+        --sidebar-primary-foreground: 0.98 0 0;
+        --sidebar-accent: var(--desert-sand);
+        --sidebar-accent-foreground: var(--desert-dark);
+        --sidebar-border: 0.88 0.06 78;
+        --sidebar-ring: var(--desert-accent);
+    }
+
+    .dark {
+        /* Dark mode with warm desert night tones - premium quality */
+        --desert-light: 0.30 0.06 50;
+        --desert-sand: 0.35 0.08 55;
+        --desert-warm: 0.40 0.10 60;
+        --desert-sky: 0.25 0.05 220;
+        --desert-sun: 0.72 0.20 50;
+        --desert-accent: 0.68 0.18 48;
+        --desert-ground: 0.45 0.10 58;
+        --desert-dark: 0.20 0.04 40;
+        
+        --background: var(--desert-dark);
+        --foreground: 0.92 0.05 82;
+        --card: var(--desert-light);
+        --card-foreground: 0.92 0.05 82;
+        --popover: var(--desert-sand);
+        --popover-foreground: 0.92 0.05 82;
+        --primary: var(--desert-sun);
+        --primary-foreground: var(--desert-dark);
+        --secondary: var(--desert-sand);
+        --secondary-foreground: 0.92 0.05 82;
+        --muted: var(--desert-sand);
+        --muted-foreground: 0.65 0.06 65;
+        --accent: var(--desert-accent);
+        --accent-foreground: 0.92 0.05 82;
+        --destructive: 0.704 0.191 22.216;
+        --destructive-foreground: var(--desert-dark);
+        --border: 0.40 0.07 55;
+        --input: 0.35 0.06 53;
+        --ring: var(--desert-accent);
+        --chart-1: var(--desert-accent);
+        --chart-2: var(--desert-sun);
+        --chart-3: var(--desert-warm);
+        --chart-4: var(--desert-ground);
+        --chart-5: var(--desert-sky);
+        --sidebar: var(--desert-light);
+        --sidebar-foreground: 0.92 0.05 82;
+        --sidebar-primary: var(--desert-sun);
+        --sidebar-primary-foreground: var(--desert-dark);
+        --sidebar-accent: var(--desert-sand);
+        --sidebar-accent-foreground: 0.92 0.05 82;
+        --sidebar-border: 0.35 0.06 53;
+        --sidebar-ring: var(--desert-accent);
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-feature-settings: "rlig" 1, "calt" 1;
+        /* Disable text selection */
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-touch-callout: none;
+        /* Disable zoom */
+        touch-action: manipulation;
+    }
+    
+    /* Smooth transitions for interactive elements with premium feel */
+    button, a, input, select, textarea {
+        @apply transition-all duration-300 ease-out;
+    }
+    
+    /* Enhanced focus states with glow effect */
+    *:focus-visible {
+        @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+        box-shadow: 0 0 0 3px oklch(var(--ring) / 0.2);
+    }
+    
+    /* Premium hover effects */
+    button:hover, a:hover {
+        transform: translateY(-1px);
+    }
+    
+    button:active, a:active {
+        transform: translateY(0);
+    }
+}
+
+/* Custom animations for premium feel */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        opacity: 1;
+        box-shadow: 0 0 20px oklch(var(--desert-sun) / 0.3);
+    }
+    50% {
+        opacity: 0.85;
+        box-shadow: 0 0 30px oklch(var(--desert-sun) / 0.5);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.animate-pulse-glow {
+    animation: pulse-glow 2.5s ease-in-out infinite;
+}
+
+.animate-shimmer {
+    background: linear-gradient(
+        90deg,
+        transparent,
+        oklch(var(--desert-sun) / 0.3),
+        transparent
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Soft shadows for depth */
+.shadow-soft {
+    box-shadow: 0 2px 8px oklch(var(--desert-dark) / 0.08),
+                0 4px 16px oklch(var(--desert-dark) / 0.06);
+}
+
+.shadow-soft-lg {
+    box-shadow: 0 4px 16px oklch(var(--desert-dark) / 0.1),
+                0 8px 32px oklch(var(--desert-dark) / 0.08);
+}
+
+.shadow-soft-xl {
+    box-shadow: 0 8px 24px oklch(var(--desert-dark) / 0.12),
+                0 16px 48px oklch(var(--desert-dark) / 0.1);
+}
+
+/* Gradient overlays for depth */
+.gradient-overlay-top {
+    background: linear-gradient(
+        to bottom,
+        oklch(var(--background) / 0.95),
+        transparent
+    );
+}
+
+.gradient-overlay-bottom {
+    background: linear-gradient(
+        to top,
+        oklch(var(--background) / 0.95),
+        transparent
+    );
+}
+
