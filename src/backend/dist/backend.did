@@ -1,0 +1,12 @@
+service : {
+  __highScores: (ko: opt text, count: opt nat) ->
+   (vec record {
+          text;
+          nat;
+        }) query;
+  getHighScores: () -> (vec record {
+                              text;
+                              nat;
+                            }) query;
+  submitScore: (playerName: text, score: nat) -> ();
+}
